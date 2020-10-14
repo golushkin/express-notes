@@ -5,6 +5,6 @@ const notes = require('./routes/notes')
 const router = express.Router()
 
 router.use('/notes', notes)
-//router.use('/users', users)
+router.use('/users', users)
 
 module.exports = router
