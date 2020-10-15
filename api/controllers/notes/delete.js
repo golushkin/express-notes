@@ -1,27 +1,5 @@
 const Note = require('../../models/note')
 
-// const arr = [
-//     {
-//         head: true,
-//         title: 'test 0',
-//         desc: '',
-//         links: [],
-//         children: []
-//     },
-//     {
-//         title: 'test 0-0',
-//         desc: '',
-//         links: [],
-//         children: []
-//     },
-//     {
-//         title: 'test 0-0-0',
-//         desc: '',
-//         links: [],
-//         children: []
-//     }
-// ]
-
 exports.delete_note = (req, res, next) => {
     Note.findOne({_id: req.params.id})
         .exec()
@@ -37,18 +15,6 @@ exports.delete_note = (req, res, next) => {
             }
         })
         .catch(err => next(err))
-    
-    // Note.findByIdAndDelete(req.params.id)
-    //     .exec()
-    //     .then(result => {
-    //         if (!result.parent) {
-    //             res.sendStatus(204)
-    //         }
-    //         else {  
-    //             delete_note_in_children(req, res, result.parent)
-    //         }
-    //     })
-    //     .catch(err => next(err))
 }
 
 
